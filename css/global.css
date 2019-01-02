@@ -1,0 +1,41 @@
+.table_img{
+
+}
+.table_desc{
+
+}
+.nav-bar{
+    background-image: linear-gradient(#cacaca, #dce0e2);
+    height: 50px;
+ 
+    padding-top: 11px;
+}
+.menu{
+    margin-left: 25px;
+}
+.social-icons-square{
+    margin-left: 20%;
+}
+.nav-bar-menu{
+    margin-left:30%;
+}
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: grey;
+  }
+.login-form-pop{
+    position: fixed;
+    width: 200px;
+    margin-left: 13%;
+    display: none;
+    margin-top: 16px;
+}
+.btn-login{
+    background-color: green;
+
+}
+.btn-cancel{
+    background-color: red;
+
+}
