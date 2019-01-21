@@ -1,7 +1,7 @@
-function openform(){
-    document.getElementById("pop").style.display="block";
+function openform(e){
+    document.getElementById(e+"Form").style.display="block";
 }
 
-function closeForm(){
-    document.getElementById("pop").style.display="none";
+function closeForm(e){
+    document.getElementById(e+"Form").style.display="none";
 }

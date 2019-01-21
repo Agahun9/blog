@@ -29,13 +29,32 @@ class queryclass{
         return $this -> connection;
     }
 
-    function zapytanie(){
-     
-        $result=mysqli_query($this -> connection,"select * from artykuly");
-        while($r = mysqli_fetch_object($result)){
-        return $r->tytul."<br>";   
-        }
-    }
+    function zapytanie($query){
+        $this -> query = $query;
+        $this -> result=mysqli_query($this -> connection,$this -> query);
+   
+
+
+            
+                while($r = mysqli_fetch_object($this -> result)) {
+                    print <<<END
+                              <a href="?article_$r->ID">
+            <table class="table table-bordered";>
+         <tr>
+         <td class="table_img"><img style="width:150px;" src="$r->zdj"></img></td>
+         <td class="table_desc">$r->tytul<br>$r->shortart
+         
+         </td>
+         </tr>
+         </table>
+            </a>
+END;
+             }
+       }
+    
+      
+   
+
     function sqlRows() 
        { 
            $this -> records_rows = mysqli_num_rows($this -> result);
@@ -43,6 +62,7 @@ class queryclass{
            
           
      } 
-
+     
+     
 }
 ?>

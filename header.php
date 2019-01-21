@@ -1,48 +1,39 @@
 <?php
 include "head.php";
-include "classes/user.php";
 
-if(isset ($_POST["login"])){
-$login=new user();
-$login->loginuser($_POST["login"],md5($_POST["pass"]));
-}
-if(isset ($_GET["logout"]))
-{
-    $login=new user();
-    $login->logout($_GET["logout"]);
-    header("location: index.php");
-}
 ?>
 
 <div class="nav-bar">
     <div class="nav-bar-menu">
-<span class="menu">Home</span>
-<span class="menu">About</span>
-<span class="menu">Contact</span>
-<?php if($_SESSION["verify"]==0){
+<a href="/index.php" class="menu">Home</a>
+<a class="menu">About</a>
+<a class="menu">Contact</a>
+<?php 
+if($_SESSION["verify"]==0){
    print <<<END
-<span class="menu">Register</span>
-<span class="menu" onclick="openform()">login</span>
+   <a href="register.php" class="menu">Register</a>
 
-<div class="login-form-pop" id="pop">
-    <form action="" class="form-container" method="post">
+<a class="menu" id=login onclick="openform(this.id)">login</a>
+
+<div class="login-form-pop" id="loginForm">
+    <form action="users.php" class="form-container" method="post">
 
     <label for="email"><b>login</b></label>
-    <input type="text" placeholder="Enter name" name="login" required="">
+    <input type="text" placeholder="Enter name" name="login" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="pass" required="">
+    <input type="password" placeholder="Enter Password" name="pass" required>
 
     <button type="submit" class="btn-login">Login</button>
-    <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
-<form>
+    <button type="button" id="login" class="btn-cancel" onclick="closeForm(this.id)">Close</button>
+    </form>
 
 </div>
 END;
 }
 else{
-    print "<span class='userName'>".$_SESSION['user_login']."</span>";
-    print "<a href='?logout'>Logout</a>";
+    print "<span class='menu'>".$_SESSION['user_login']."</span>";
+    print "<a class='menu' href='/users.php?logout'>Logout</a>";
 }
 ?>
 
