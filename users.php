@@ -1,27 +1,47 @@
 <?php
 session_start();
 include "classes/user.php";
-$identifity=substr($_SERVER['REQUEST_URI'],11);
-PRINT $identifity;
+
 if(isset ($_POST["login"])){
+    
     $login=new user();
-    $login->loginuser($_POST["login"],md5($_POST["pass"]));
-    header("location: index.php");
+    $loginstatus=$login->loginuser($_POST["login"],md5($_POST["pass"]));
+    if ($loginstatus==true){
+        print "zalogowany";
+    }
+    else{
+        print "bląd przy logowaniu";
+    }
+    
+    header("refresh:1 index.php");
 }
 
 
 if(isset ($_GET["logout"]))
 {
     $login=new user();
-    $login->logout($_GET["logout"]);
-    header("location: index.php");
+    $logoutstatus=$login->logout($_GET["logout"]);
+    if ($loginstatus==true){
+        print "Pomyślnie wylogowano";
+    }
+    else {
+        print "Błąd przy wylogowaniu";
+    }
+    header("refresh:1 index.php");
 }
 
 if(isset ($_POST["register"]))
 {
     $register=new user();
-    $register->register($_POST["reglogin"],md5($_POST["regpass"]));
-    header("location: index.php");
+    $registerstatus=$register->register($_POST["reglogin"],md5($_POST["regpass"]));
+    if ($registerstatus==true){
+        print "zarejestrowany";
+    }
+    else {
+        print "błąd przy rejestracji";
+    }
+    
+    header("refresh:1 index.php");
 }
 
 

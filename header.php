@@ -34,6 +34,7 @@ END;
 else{
     print "<span class='menu'>".$_SESSION['user_login']."</span>";
     print "<a class='menu' href='/users.php?logout'>Logout</a>";
+    print "<a class='menu' href='admin/admin.php'>Admin Panel</a>";
 }
 ?>
 
