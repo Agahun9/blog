@@ -16,7 +16,7 @@
   <form method="POST" action="admincontroller.php"> 
     <textarea name="title" Placeholder="Title" required></textarea><br>
     <textarea name="shortdesc" Placeholder="Short description" rows="10" cols="50" required></textarea><br>
-    <input type="text" name="image" Placeholder="image"  required></input><br>
+    <input type="text" name="image" Placeholder="image"  required></input> URL<br>
     <textarea id="mytextarea" name="article" required>Hello, World!</textarea>
     <input type="submit" value="add" name="add">
   </form>

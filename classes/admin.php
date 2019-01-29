@@ -19,15 +19,17 @@ class Article extends DB{
         $this -> shortdesc = $shortdesc;
         $this -> fullarticle = $fullarticle;
         $this -> image = $image;
-        
+        $this -> sqlConnect();
+        $query = mysqli_query($this->connection,"INSERT into artykuly values('','bb','cc','dd','eee')")
+        or die("abb");
     }
 
    
     function saveart(){
-     $this -> sqlConnect();
+     
      
        
-     $query = mysqli_query($this->connection,"INSERT into artykuly values('','$this -> fullarticle','$this -> image','$this -> title','$this -> shortdesc')");
+     
     }
 
 }
