@@ -1,6 +1,6 @@
 <?php
 require_once "DB.php";
-class DataBase extends DB{
+class SqlService extends DB{
 
     function zapytanie($query){
         $this -> sqlConnect();

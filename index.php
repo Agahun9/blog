@@ -1,7 +1,7 @@
 <?php
 include "header.php";
-require_once "classes/dbquery.php";
-$query=new DataBase();
+require_once "classes/SqlService.php";
+$query=new SqlService();
 $zapytanie = $query->zapytanie("select * from artykuly");
 
 if (!strrpos($_SERVER['REQUEST_URI'],"article")){

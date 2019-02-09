@@ -1,7 +1,7 @@
 <?php
-include "../classes/dbquery.php";
+include "../classes/SqlService.php";
 if(isset ($_POST["add"])){
-    $add=new DataBase();
+    $add=new SqlService();
     $title=$_POST["title"];
     $shortdesc=$_POST["shortdesc"];
     $image=$_POST["image"];
@@ -11,7 +11,7 @@ if(isset ($_POST["add"])){
 }
 
 if(isset ($_POST["delete"])){
-    $delete=new DataBase();
+    $delete=new SqlService();
     $id=$_POST["ID"];
     $query=$delete->zapytanie("DELETE FROM artykuly where ID=$id");
     if ($query==true){
@@ -28,7 +28,7 @@ if(isset ($_POST["edit"])){
 }
 
 if(isset ($_POST["editarticle"])){
-    $edit=new DataBase();
+    $edit=new SqlService();
     $id=$_POST["ID"];
     $title=$_POST["title"];
     $shortdesc=$_POST["shortdesc"];

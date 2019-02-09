@@ -1,6 +1,6 @@
 <?php
-include "dbquery.php";
-class user extends DataBase{
+include "DB.php";
+class user extends DB{
     function loginuser($login,$pass){
         
         $this -> sqlConnect();

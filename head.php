@@ -6,7 +6,13 @@
 <script src="js/scripts.js"></script>
 <title>Stronka test</title>
 <?php
+if (!isset($_SESSION))
+{
 session_start();
+}
+if(!isset ($_SESSION['verify'])){
+    $_SESSION["verify"]=0;
+}
 ?>
 </head>
 <body>

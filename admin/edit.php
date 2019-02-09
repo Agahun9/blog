@@ -1,6 +1,6 @@
 <?php
-include "../classes/dbquery.php";
-$edit=new DataBase();
+include "../classes/SqlService.php";
+$edit=new SqlService();
 $id=$_GET["ID"];
 $r = mysqli_fetch_object($edit->zapytanie("select * from artykuly where ID=$id"));
 ?>

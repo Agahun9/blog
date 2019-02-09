@@ -5,8 +5,8 @@ if($_SESSION["verify"]==1){
 
 
       
-require_once "../classes/dbquery.php";
-$query=new DataBase();
+require_once "../classes/SqlService.php";
+$query=new SqlService();
 ?>
 <a href="add.php"><button>Add article</button></a>
 <?php
