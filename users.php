@@ -21,7 +21,7 @@ if(isset ($_GET["logout"]))
 {
     $login=new user();
     $logoutstatus=$login->logout($_GET["logout"]);
-    if ($loginstatus==true){
+    if ($logoutstatus==true){
         print "Pomyślnie wylogowano";
     }
     else {

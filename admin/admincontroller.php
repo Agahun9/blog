@@ -7,7 +7,7 @@ if(isset ($_POST["add"])){
     $image=$_POST["image"];
     $article=$_POST["article"];
     $add->zapytanie("INSERT into artykuly values('','$article','$image','$title','$shortdesc')");
-    
+    header("refresh:1 /admin/admin.php");
 }
 
 if(isset ($_POST["delete"])){
@@ -20,6 +20,7 @@ if(isset ($_POST["delete"])){
     else{
         print "Błąd w usuwaniu artykułu";
     }
+    header("refresh:1 /admin/admin.php");
 }
 
 if(isset ($_POST["edit"])){
@@ -36,5 +37,6 @@ if(isset ($_POST["editarticle"])){
     $article=$_POST["article"];
     $edit=$edit->zapytanie("UPDATE `artykuly` SET `artykul` = '$article', `zdj` = '$image', `tytul` = '$title', `shortart` = '$shortdesc' WHERE `artykuly`.`ID` ='$id'")
     or die("bład");
+    header("refresh:1 /admin/admin.php");
 }
 

@@ -6,8 +6,6 @@ include "head.php";
 <div class="nav-bar">
     <div class="nav-bar-menu">
 <a href="/index.php" class="menu">Home</a>
-<a class="menu">About</a>
-<a class="menu">Contact</a>
 <?php 
 if($_SESSION["verify"]==0){
    print <<<END
