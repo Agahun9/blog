@@ -5,8 +5,6 @@ class user extends DB{
         
         $this -> sqlConnect();
         $query=mysqli_query($this -> connection,"SELECT login FROM user WHERE login='$login' AND haslo='$pass'");
-        mysqli_query($this->connection,"INSERT into artykuly values('','bb','cc','dd','eee')")
-        or die("abb");
         $r=mysqli_fetch_array($query);   
         if (isset ($r[0]))
         {

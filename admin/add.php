@@ -1,4 +1,7 @@
-
+<?php
+include "../head.php";
+if($_SESSION["verify"]==1){
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,3 +25,11 @@
   </form>
 </body>
 </html>
+
+
+<?php
+}
+else{
+  print "proszę się zalogować";
+}
+?>

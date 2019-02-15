@@ -1,4 +1,7 @@
 <?php
+include "../head.php";
+if($_SESSION["verify"]==1){
+?>
 include "../classes/SqlService.php";
 $edit=new SqlService();
 $id=$_GET["ID"];
@@ -27,3 +30,11 @@ $r = mysqli_fetch_object($edit->zapytanie("select * from artykuly where ID=$id")
   </form>
 </body>
 </html>
+
+
+<?php
+}
+else{
+  print "proszę się zalogować";
+}
+?>
